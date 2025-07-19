@@ -13,7 +13,19 @@ public static class Arrays
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
 
-        return []; // replace this return statement with your own
+        // 1. loop through all numbers from 1 to length
+        // 2. In each iteration, multiply number with the iteration number
+        // 3. add the result to the final list
+        // 4. at the end of the loop, return the final list of multiples.
+
+        var result = new double[length];
+
+        for (int i = 0; i < length; i++)
+        {
+            result[i] = number * (i + 1);
+        }
+
+        return result; // replace this return statement with your own
     }
 
     /// <summary>
@@ -29,5 +41,12 @@ public static class Arrays
         // Remember: Using comments in your program, write down your process for solving this problem
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
+
+        // 1. extract and remove the list of items that need to be rotated from the data list
+        // 2. add these items to the front of the data list
+
+        var rotate = data.GetRange(data.Count - amount, amount);
+        data.RemoveRange(data.Count - amount, amount);
+        data.InsertRange(0, rotate);
     }
 }
